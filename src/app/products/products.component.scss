@@ -1,0 +1,22 @@
+.card {
+    height: 410px;
+
+    .card-img-top {
+        min-height: 200px;
+        height: 200px;
+    }
+
+    .card-title {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .text-muted {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        height: 100px;
+        overflow: hidden;
+    }
+}

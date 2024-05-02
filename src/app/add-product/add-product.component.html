@@ -1,0 +1,36 @@
+<form class="my-4 pb-3 px-5 container mx-auto shadow rounded" [formGroup]="addProduct">
+    <h2 class="mb-5 pt-2">Add Product</h2>
+    <div class="row mb-3">
+        <label for="ProductName" class="col-lg-2 col-form-label"><strong>Name</strong></label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" formControlName="name" id="ProductName">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="ProductDesc" class="col-lg-2 col-form-label"><strong>Description</strong></label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" formControlName="description" id="ProductDesc">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="ProductPrice" class="col-lg-2 col-form-label"><strong>Price</strong></label>
+        <div class="col-lg-10">
+            <input type="number" class="form-control" formControlName="price" id="ProductPrice">
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <label for="ProductPrice" class="col-lg-2 col-form-label"><strong>Image</strong></label>
+        <div class="col-lg-10">
+            <input type="file" class="form-control" #imgReset (change)="uploadImg($event)" id="ProductPrice">
+        </div>
+    </div>
+
+    <div class="row">
+        <button type="submit" class="btn btn-primary" [disabled]="addProduct.invalid && !addProduct.value.image"
+            (click)="emitProduct(); resetImg(imgReset)">
+            Add Product</button>
+    </div>
+</form>
